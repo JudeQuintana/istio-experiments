@@ -30,8 +30,6 @@ IPAM Configuration:
       - Provisioned CIDRs:
         - `10.0.0.0/18`
 
-Switch to directory `cd basic-mesh`.
-
 See [here](https://aws-ia.github.io/terraform-aws-eks-blueprints/getting-started/#prerequisites) for the prerequisites and run the following command to deploy this pattern.
 
 ```sh
