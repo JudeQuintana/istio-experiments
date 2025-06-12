@@ -1,7 +1,7 @@
 # Info
 Copied and modified from https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/patterns/istio
 
-Start with one istio mesh in eks and eventually work up to dual-stack multi-primary multi-network istio configuration.
+Start with basic istio mesh in eks and eventually work up to dual-stack multi-primary multi-network istio configuration.
 
 # Amazon EKS Cluster w/ Istio
 
@@ -29,6 +29,8 @@ IPAM Configuration:
       - Description: `ipv4-test-usw2`
       - Provisioned CIDRs:
         - `10.0.0.0/18`
+
+Switch to directory `cd basic-mesh`.
 
 See [here](https://aws-ia.github.io/terraform-aws-eks-blueprints/getting-started/#prerequisites) for the prerequisites and run the following command to deploy this pattern.
 
