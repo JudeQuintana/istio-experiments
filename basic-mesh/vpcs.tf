@@ -17,17 +17,6 @@ data "aws_vpc_ipam_pool" "ipv4_usw2" {
 }
 
 locals {
-  env_prefix = "test"
-
-  region_az_labels = {
-    us-west-2  = "usw2"
-    us-west-2a = "usw2a"
-    us-west-2b = "usw2b"
-    us-west-2c = "usw2c"
-  }
-
-  private_subnet_tags = { "kubernetes.io/role/internal-elb" = 1 }
-  public_subnet_tags  = { "kubernetes.io/role/elb" = 1 }
   ipv4_ipam_pool_usw2 = data.aws_vpc_ipam_pool.ipv4_usw2
 }
 

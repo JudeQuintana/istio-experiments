@@ -1,19 +1,3 @@
-# pull region from provider
-data "aws_region" "current" {}
-
-locals {
-  region = data.aws_region.current.name
-  name   = "istio-experiment"
-
-  tags = {
-    Blueprint  = local.name
-    GithubRepo = "github.com/JudeQuintana/terraform-main/istio-experiment"
-  }
-
-  istio_chart_url     = "https://istio-release.storage.googleapis.com/charts"
-  istio_chart_version = "1.26.1"
-}
-
 ################################################################################
 # Cluster
 ################################################################################
