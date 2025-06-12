@@ -23,7 +23,7 @@ locals {
 
   tags = {
     Blueprint  = local.name
-    GithubRepo = "github.com/JudeQuintana/terraform-main/istio-experiment"
+    GithubRepo = "github.com/JudeQuintana/istio-experiments/basic-mesh"
   }
 
   istio_chart_url     = "https://istio-release.storage.googleapis.com/charts"
