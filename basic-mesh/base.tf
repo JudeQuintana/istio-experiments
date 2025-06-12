@@ -2,7 +2,7 @@
 data "aws_region" "current" {}
 
 locals {
-  name       = "istio-experiment"
+  name       = "istio-basic"
   env_prefix = "test"
   region     = data.aws_region.current.name
 
