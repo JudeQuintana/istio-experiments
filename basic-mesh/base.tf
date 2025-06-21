@@ -13,20 +13,9 @@ locals {
     us-west-2c = "usw2c"
   }
 
-  private_subnet_tags = {
-    "kubernetes.io/role/internal-elb" = 1
-  }
-
-  public_subnet_tags = {
-    "kubernetes.io/role/elb" = 1
-  }
-
   tags = {
     Blueprint  = local.name
     GithubRepo = "github.com/JudeQuintana/istio-experiments/basic-mesh"
   }
-
-  istio_chart_url     = "https://istio-release.storage.googleapis.com/charts"
-  istio_chart_version = "1.26.1"
 }
 

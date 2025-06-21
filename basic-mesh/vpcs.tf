@@ -23,6 +23,14 @@ locals {
 # ipv4 and ipv6 must use an ipam pool
 # can start with ipv4 only and then add ipv6 later if needed.
 locals {
+  private_subnet_tags = {
+    "kubernetes.io/role/internal-elb" = 1
+  }
+
+  public_subnet_tags = {
+    "kubernetes.io/role/elb" = 1
+  }
+
   vpcs_usw2 = [
     {
       name = "app"

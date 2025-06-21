@@ -71,6 +71,11 @@ resource "kubernetes_namespace_v1" "istio_system" {
   }
 }
 
+locals {
+  istio_chart_url     = "https://istio-release.storage.googleapis.com/charts"
+  istio_chart_version = "1.26.1"
+}
+
 module "eks_blueprints_addons" {
   source  = "aws-ia/eks-blueprints-addons/aws"
   version = "~>1.21"

@@ -43,6 +43,11 @@ Once the resources have been provisioned, you will need to replace the `istio-in
 kubectl rollout restart deployment istio-ingress -n istio-ingress
 ```
 
+Get the ALB DNS entry.
+```sh
+kubectl get svc istio-ingress -n istio-ingress  -o jsonpath="{.status.loadBalancer.ingress[0].hostname}"
+```
+
 ### Observability Add-ons
 
 Use the following code snippet to add the Istio Observability Add-ons on the EKS
@@ -308,6 +313,7 @@ A possible workaround is to manually uninstall the `istio-ingress` helm chart.
 
 ```sh
 terraform destroy -target='module.eks_blueprints_addons.helm_release.this["istio-ingress"]' -auto-approve
+terraform destroy -auto-approve
 ```
 
 Once the chart is uninstalled move on to destroy the stack.
