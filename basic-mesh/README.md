@@ -316,6 +316,8 @@ terraform destroy -target='module.eks_blueprints_addons.helm_release.this["istio
 terraform destroy -auto-approve
 ```
 
+Might need to manually delete lingering SGs dependencies attached the VPC that were created by Kube/Istio.
+
 Once the chart is uninstalled move on to destroy the stack.
 
 {%
