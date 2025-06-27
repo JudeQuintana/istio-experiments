@@ -1,0 +1,21 @@
+# pull region from provider
+data "aws_region" "current" {}
+
+locals {
+  name       = "istio-basic"
+  env_prefix = "test"
+  region     = data.aws_region.current.name
+
+  region_az_labels = {
+    us-west-2  = "usw2"
+    us-west-2a = "usw2a"
+    us-west-2b = "usw2b"
+    us-west-2c = "usw2c"
+  }
+
+  tags = {
+    Blueprint  = local.name
+    GithubRepo = "github.com/JudeQuintana/istio-experiments/basic-mesh"
+  }
+}
+
